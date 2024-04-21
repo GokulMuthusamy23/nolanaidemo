@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- Created by Coding Pakistan -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NolanAI</title>
+<link rel="stylesheet" href="login.css">
+
+</head>
+<body>
+<div class="container">
+    <h3>LOG IN</h3>
+<div class="box box-one">
+<button onclick="signin()">
+<img src="google.png" width="19">
+<span>Continue with Google</span>
+</button>
+<button id="login" onclick="login()">    
+<img src="facebook.png" width="19">
+<span>Continue with Facebook</span>
+</button>
+<div id="status"></div>
+<button>
+    <img src="email.png" width="19">
+    <span>Continue with Email</span>
+    </button>
+</div>
+<h5>Or</h5>
+<div class="box box-two">
+<form>
+<input type="text" placeholder="Phone,email, or username"/>
+</form>
+<button class="next-btn">Next</button>
+<button>Forget password</button>
+</div>
+<p>Don't have an account <a href="#">Sign Up</a></p>
+</div>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="main.js"></script>
+
+
+<script>  
+  function login(){
+      FB.login(function(response){
+         console.log(response);
+      })
+  }
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '3725985780972266',
+      xfbml            : true,
+      version          : 'v19.0'
+    });
+  };
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+
+
+</body>
+</html>
